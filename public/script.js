@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── 9. CHAT FUNCTIONALITY ─────────────────────────────────────
 
   // State
-  const MAX_MESSAGES  = 3;
+  const MAX_MESSAGES  = 20;
   const SESSION_KEY   = 'chatMsgCount';
   let conversationHistory = [];
   let isStreaming         = false;

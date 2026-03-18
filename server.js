@@ -35,8 +35,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // ── Rate Limiting ──────────────────────────────────────────────────────────────
 const chatLimiter = rateLimit({
-  windowMs: 5 * 60 * 1000, // 5 minutes
-  max: 8,
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 25,
   standardHeaders: true,
   legacyHeaders: false,
   message: {
