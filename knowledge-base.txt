@@ -1,0 +1,135 @@
+=== WHAT IS DEUCALION ===
+Deucalion is one of Europe's most powerful supercomputers, hosted at MACC (Minho Advanced Computing Centre) in Braga, Portugal. It is part of the EuroHPC Joint Undertaking, a European initiative to build world-class supercomputing infrastructure across Europe. Inaugurated in 2023, Deucalion achieves peak performance exceeding 30 petaflops, ranking among the top supercomputers in Europe. The system is named after the Greek mythological figure Deucalion, the son of Prometheus, symbolizing Portugal's connection to fire, light, and the forging of a new future through technology. It represents a landmark achievement for Portuguese scientific and industrial competitiveness.
+
+=== TECHNICAL SPECIFICATIONS ===
+Deucalion's architecture is designed for both traditional HPC workloads and modern AI/ML tasks:
+- AMD EPYC processors for CPU workloads (high core count, large memory capacity)
+- AMD Instinct MI250X GPUs for AI and parallel computing (each GPU features 128GB HBM2e memory)
+- High-speed InfiniBand HDR interconnect for ultra-low latency node communication
+- Petabyte-scale parallel storage (Lustre filesystem) for high-throughput I/O
+- Approximately 30 petaflops peak performance (combined CPU + GPU)
+- Hundreds of computing nodes across CPU-only and GPU-accelerated partitions
+- Water cooling systems for maximum energy efficiency
+- Located in MACC's purpose-built data center in Braga, Portugal
+- Supports ROCm (AMD's GPU programming platform), CUDA-compatible workloads, MPI, OpenMP
+- Pre-installed scientific software stack: OpenFOAM, GROMACS, NAMD, TensorFlow, PyTorch, LAMMPS
+
+=== USE CASES ===
+Scientific Research:
+- Computational Fluid Dynamics (CFD): simulate aerodynamics, heat transfer, turbulence
+- Molecular Dynamics: protein folding, drug-receptor binding, material properties
+- Climate Modeling: regional and global atmosphere-ocean coupled simulations
+- Genomics and Bioinformatics: genome assembly, population genetics, variant calling at scale
+- Astrophysics: N-body simulations, galaxy formation, gravitational wave analysis
+
+Industrial Applications:
+- Automotive aerodynamics: reduce drag, optimize body shape, EV range maximization
+- Aerospace engineering: structural analysis, propulsion optimization, noise reduction
+- Oil and Gas: reservoir simulation, seismic data processing, pipeline optimization
+- Financial risk modeling: Monte Carlo simulations, VaR calculations, stress testing
+- Manufacturing optimization: supply chain, production scheduling, quality prediction
+
+AI and Machine Learning:
+- Large Language Model (LLM) training and fine-tuning on domain-specific data
+- Computer vision model training for industrial inspection, medical imaging
+- Reinforcement learning for robotics, control systems, and autonomous systems
+- Predictive maintenance using time-series deep learning
+- Generative AI for materials and drug design
+
+=== ABOUT MAKEIT ===
+MakeIt is a Portuguese technology company specialized in High-Performance Computing (HPC) consulting and AI solutions. Our mission is to bridge the gap between cutting-edge supercomputing infrastructure — particularly Deucalion — and the companies that can benefit from it but lack the in-house expertise to access it.
+
+MakeIt's Services:
+- HPC Consultation: needs assessment, feasibility studies, architecture design
+- Application Porting: migrate your existing software to run efficiently on Deucalion
+- AI Model Development: custom deep learning models trained at petascale
+- Custom Simulation Software: develop bespoke computational physics and engineering tools
+- Data Analysis at Scale: parallel data pipelines for petabyte datasets
+- Team Training: workshops from introductory HPC to advanced parallel programming
+
+Track Record:
+- 20+ successful projects delivered across five industries
+- Team of computational physicists, software engineers, data scientists, and HPC specialists
+- Partners with MACC, EuroHPC, and leading Portuguese universities
+- Based in Portugal, serving clients across all of Europe
+- Free initial consultation available for all new inquiries
+
+=== MAKEIT PROJECTS WITH DEUCALION ===
+
+Project 1: EV Aerodynamics Optimization
+Industry: Automotive
+Challenge: An electric vehicle manufacturer needed to dramatically reduce aerodynamic drag to maximize driving range and competitiveness in the European EV market. Traditional wind tunnel testing was too slow and expensive to iterate effectively.
+Solution: MakeIt designed a massively parallel CFD workflow using OpenFOAM with AMD GPU-optimized solvers. We ran over 1,200 parallel simulations on Deucalion, exploring thousands of geometric parameter combinations across the vehicle body, underbody, and wheel arches using a Design of Experiments approach coupled with gradient-based optimization.
+Impact: Achieved 8.3% reduction in drag coefficient, translating directly to a 12% increase in driving range. Total time from project kickoff to final design: 3 weeks, compared to 6 months using traditional sequential testing. The client brought the optimized design to production within one year.
+Technologies: OpenFOAM, ParaView, PyFoam, custom Python optimization framework, MPI, AMD ROCm
+
+Project 2: AI-Accelerated Drug Discovery
+Industry: Pharmaceutical
+Challenge: A pharmaceutical company needed to screen millions of small molecule candidates for binding affinity to a target protein associated with a rare neurological disease. Traditional in-vitro screening would have taken over 18 months and cost tens of millions of euros.
+Solution: MakeIt developed a hybrid pipeline combining molecular dynamics simulations with a deep learning model. The ML model — trained on 50 terabytes of simulation data generated on Deucalion's GPU nodes — learned to predict binding affinity in milliseconds instead of hours. We then used the model to screen a virtual library of 4 million compounds.
+Impact: Identified 47 high-potential molecular candidates in just 3 weeks. Three of these candidates are currently in pre-clinical testing, with one entering Phase I clinical trials. The approach reduced the screening cost by over 90% compared to traditional methods.
+Technologies: GROMACS, TensorFlow, PyTorch, RDKit, custom graph neural network (GNN), AMD MI250X GPUs
+
+Project 3: Wind Farm Layout Optimization
+Industry: Renewable Energy
+Challenge: An energy developer planning a 200-turbine offshore wind farm on the Portuguese Atlantic coast needed to optimize turbine placement to maximize annual energy production while minimizing wake interference effects between turbines.
+Solution: MakeIt implemented a coupled simulation-optimization framework on Deucalion. We ran thousands of high-fidelity wake simulations using the FLORIS framework enhanced with LES (Large Eddy Simulation) corrections, combined with a genetic algorithm that explored over 500,000 distinct layout configurations across varying wind rose scenarios.
+Impact: The optimized layout delivers 23% more annual energy production compared to the initial engineering estimate. At the planned capacity, this represents approximately €8 million in additional annual revenue over the farm's 25-year lifespan. The client is now using MakeIt's framework for two additional offshore projects.
+Technologies: FLORIS, OpenFOAM (LES), NREL's WISDEM, custom genetic algorithm, Python parallel framework, MPI
+
+Project 4: Real-Time Financial Risk Engine
+Industry: Banking and Finance
+Challenge: A major Portuguese bank's overnight portfolio risk assessments required 4 hours of computation, preventing real-time risk monitoring. The system also couldn't handle the complex cross-asset correlations and stress scenarios required by new regulatory frameworks (Basel IV).
+Solution: MakeIt redesigned the risk engine as a GPU-accelerated Monte Carlo application running as a distributed parallel workload on Deucalion. The new system generates and analyzes 10 million market scenarios in minutes, with full cross-asset correlation matrices and jump-diffusion processes.
+Impact: Computation time reduced from 4 hours to 18 minutes — a 13x speedup. The bank can now run 10x more scenarios, dramatically improving risk model accuracy. Estimated annual infrastructure savings of €2.1 million by replacing legacy on-premise hardware. The system handles intraday risk updates that were previously impossible.
+Technologies: C++, CUDA/ROCm, Python, MPI, custom GPU-optimized Monte Carlo kernels, HDF5, Apache Arrow
+
+Project 5: Atlantic Ocean Circulation Model
+Industry: Environmental Research / Government
+Challenge: Portuguese environmental research institutions needed a high-resolution model of North Atlantic circulation patterns to study climate change impacts on Portugal's coastline, including sea level rise, marine temperature anomalies, and fisheries migration.
+Solution: MakeIt deployed and configured a coupled NEMO (ocean) + WRF (atmosphere) model on Deucalion, achieving 3x higher spatial resolution than any previous regional model of this area — from 10km to 3km grid spacing. The coupled model ran 50-year hindcast and 30-year projection simulations.
+Impact: The model revealed previously unknown mesoscale ocean circulation patterns affecting the Portuguese coastal upwelling system. Results have been published in three top-tier oceanography journals and are directly informing the Portuguese national coastal adaptation plan. The dataset is now openly available to the European scientific community.
+Technologies: NEMO v4.2, WRF 4.5, Python (xarray, Dask), CDO, NCO, MPI, NetCDF, 128 GPU nodes
+
+=== FREQUENTLY ASKED QUESTIONS ===
+
+Q: What is a supercomputer and why does my company need one?
+A: A supercomputer is a system that can perform hundreds of trillions of calculations per second — far beyond what even a large cluster of workstations can achieve. Your company could benefit from one if you need to: process massive datasets that exceed your current infrastructure capacity, run complex physics simulations (aerodynamics, structural mechanics, fluid flow), train large AI or machine learning models, or explore optimization problems with millions of variables. If your engineers are waiting hours or days for simulation results, or if you have a research question that seems computationally "impossible," that's a strong signal that HPC could transform your work.
+
+Q: How do I access Deucalion through MakeIt?
+A: MakeIt manages the entire process so you don't need any prior HPC expertise. The journey typically works like this: (1) Free initial consultation to understand your problem and assess feasibility. (2) We design a computational architecture and estimate resource requirements. (3) MakeIt applies for computing time allocations on Deucalion on your behalf. (4) Our engineers develop or adapt your software for efficient parallel execution. (5) We run the computations, monitor progress, and troubleshoot. (6) We deliver results with full analysis, visualizations, and documentation. You focus on your domain expertise — we handle everything technical.
+
+Q: What does it cost to use Deucalion through MakeIt?
+A: Costs depend on project scope, complexity, and duration. MakeIt offers project-based fixed-price packages for well-defined studies, and consulting retainer models for ongoing or exploratory work. Importantly, computing time on Deucalion is significantly subsidized by EuroHPC funding, which dramatically reduces the infrastructure cost compared to commercial cloud HPC for eligible projects. Portuguese and European companies often qualify for subsidized access. The initial consultation is always free, and we provide a detailed cost estimate before any commitment.
+
+Q: How long does a typical project take?
+A: Small feasibility studies or pilot simulations: 2–4 weeks. Medium-scale simulation campaigns or ML model development: 4–8 weeks. Large-scale, multi-physics projects or long-running climate models: 2–6 months. We always define clear milestones and provide weekly progress reports. Turnaround is dramatically faster than traditional approaches — as our case studies show, we compressed 18 months of drug discovery work into 3 weeks.
+
+Q: What industries benefit most from Deucalion?
+A: Industries with the highest impact include: Automotive (aerodynamics, crash simulation, NVH), Aerospace (propulsion, structural analysis), Pharmaceutical and Biotech (drug discovery, protein simulation), Renewable Energy (wind, solar, grid optimization), Financial Services (risk modeling, algorithmic trading), Manufacturing (process optimization, predictive quality), Environmental Science and Government (climate, coastal management), Logistics (route and network optimization), Defense and Security (sensor fusion, trajectory optimization), and Materials Science (alloy design, semiconductor simulation).
+
+Q: Is my data and intellectual property safe?
+A: Absolutely. MakeIt operates under strict data governance standards: we are GDPR compliant, we sign comprehensive NDAs with all clients before any engagement, our practices align with ISO 27001 information security standards, all data is stored in encrypted systems with access controls, Deucalion's infrastructure is operated by MACC with EU-level security protocols, and no client data is ever shared with third parties. Your intellectual property remains entirely yours.
+
+Q: What is EuroHPC and why does it matter for Portuguese companies?
+A: EuroHPC (European High Performance Computing Joint Undertaking) is a EU initiative to build and operate world-class supercomputing infrastructure across Europe. It funded Deucalion as Portugal's flagship system. For Portuguese companies, EuroHPC matters because: it provides subsidized access to infrastructure that would otherwise cost hundreds of millions of euros, it levels the playing field against larger international competitors with private HPC infrastructure, it keeps your data within European sovereignty and regulatory frameworks, and it builds domestic expertise and competitiveness in strategic technology sectors.
+
+Q: Can MakeIt train my team to use HPC?
+A: Yes. MakeIt offers training workshops tailored to different skill levels: introductory HPC awareness sessions for technical managers and decision-makers, hands-on parallel programming courses (MPI, OpenMP, GPU programming with ROCm/CUDA), domain-specific training for CFD, molecular simulation, or ML workloads, and knowledge transfer throughout all project engagements so your team builds capability over time. We believe in empowering clients, not creating dependency.
+
+Q: What if my company needs specialized or custom software?
+A: Software development and porting is one of MakeIt's core competencies. We have deep experience with C++, Python, Fortran, MPI, OpenMP, CUDA, ROCm, OpenCL, and all major scientific frameworks. We can port your existing sequential code to run in parallel, develop new HPC applications from scratch, optimize hotspots for GPU acceleration, and containerize applications for reproducible deployment on Deucalion.
+
+Q: How does the initial consultation work?
+A: The free 1-hour consultation (video call or in-person in Portugal) covers: understanding your problem, data, and current computational approach; assessing technical feasibility on Deucalion; providing a rough estimate of computing time, timeline, and cost; and outlining a possible project approach. There is absolutely no obligation after the consultation. We want you to leave the call with a clear picture of whether HPC is the right tool for your challenge, even if the answer is "not yet."
+
+=== CONTACT INFORMATION ===
+Company: MakeIt Technology
+Location: Portugal (serving all of Europe)
+Email: info@make-it.tech
+Website: make-it.tech
+Focus Areas: High-Performance Computing (HPC), Artificial Intelligence, Simulation Engineering, Scientific Software Development
+Services: Free initial consultation, project-based engagements, HPC training, AI development, application porting
+Target Clients: Companies and research institutions across Portugal and Europe facing complex computational challenges
+Contact us for: free consultation, partnership inquiries, project scoping, training requests, media and press
+Response time: We aim to respond to all inquiries within one business day.
