@@ -7,6 +7,8 @@ const rateLimit = require('express-rate-limit');
 const fs = require('fs');
 const path = require('path');
 const Anthropic = require('@anthropic-ai/sdk');
+const multer = require('multer');
+const nodemailer = require('nodemailer');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -149,6 +151,35 @@ const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
+// ── Multer (file uploads — memory storage, 5 MB limit) ────────────────────────
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 5 * 1024 * 1024 },
+  fileFilter: (_req, file, cb) => {
+    const allowed = /pdf|doc|docx|png|jpg|jpeg|gif|zip|txt/i;
+    const ok = allowed.test(path.extname(file.originalname)) && allowed.test(file.mimetype.split('/')[1]);
+    cb(ok ? null : new Error('File type not allowed.'), ok);
+  },
+});
+
+// ── Nodemailer Transport ───────────────────────────────────────────────────────
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,
+  port: parseInt(process.env.SMTP_PORT || '587', 10),
+  secure: process.env.SMTP_SECURE === 'true',
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+});
+
+// Contact destination map
+const CONTACT_TARGETS = {
+  makeit:    { email: process.env.CONTACT_EMAIL_MAKEIT    || 'info@make-it.tech', label: 'MakeIt Technology' },
+  deucalion: { email: process.env.CONTACT_EMAIL_DEUCALION || 'info@make-it.tech', label: 'Deucalion / MACC' },
+  cotec:     { email: process.env.CONTACT_EMAIL_COTEC     || 'info@make-it.tech', label: 'COTEC Open Day' },
+};
+
 // ── Chat Endpoint ──────────────────────────────────────────────────────────────
 app.post('/api/chat', chatLimiter, async (req, res) => {
   // Input validation
@@ -261,6 +292,66 @@ GUIDELINES:
     const errPayload = JSON.stringify({ error: 'An error occurred. Please try again or contact us at info@make-it.tech.' });
     res.write(`data: ${errPayload}\n\n`);
     res.end();
+  }
+});
+
+// ── Contact Form Endpoint ──────────────────────────────────────────────────────
+app.post('/api/contact', upload.single('attachment'), async (req, res) => {
+  const { target, name, email, subject, message } = req.body;
+
+  // Basic validation
+  if (!name?.trim() || !email?.trim() || !message?.trim()) {
+    return res.status(400).json({ error: 'Name, email and message are required.' });
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return res.status(400).json({ error: 'Invalid email address.' });
+  }
+  if (message.length > 5000) {
+    return res.status(400).json({ error: 'Message too long (max 5000 characters).' });
+  }
+
+  const dest = CONTACT_TARGETS[target] || CONTACT_TARGETS.makeit;
+  const safeSubject = subject?.trim() || `Contacto via COTEC OpenDay — ${dest.label}`;
+
+  const htmlBody = `
+    <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
+      <h2 style="color:#E53935">Nova mensagem via COTEC OpenDay</h2>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><td style="padding:8px;font-weight:bold;color:#666">De:</td><td style="padding:8px">${name} &lt;${email}&gt;</td></tr>
+        <tr><td style="padding:8px;font-weight:bold;color:#666">Para:</td><td style="padding:8px">${dest.label}</td></tr>
+        <tr><td style="padding:8px;font-weight:bold;color:#666">Assunto:</td><td style="padding:8px">${safeSubject}</td></tr>
+      </table>
+      <hr style="border:1px solid #eee;margin:16px 0">
+      <div style="white-space:pre-wrap;line-height:1.6">${message.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>
+      <hr style="border:1px solid #eee;margin:16px 0">
+      <p style="color:#999;font-size:12px">Enviado a partir do assistente COTEC OpenDay · make-it.tech</p>
+    </div>`;
+
+  const mailOptions = {
+    from: process.env.SMTP_FROM || 'Deucalion Web <no-reply@make-it.tech>',
+    replyTo: `"${name}" <${email}>`,
+    to: dest.email,
+    subject: `[COTEC] ${safeSubject}`,
+    text: `De: ${name} <${email}>\nPara: ${dest.label}\n\n${message}`,
+    html: htmlBody,
+    attachments: [],
+  };
+
+  if (req.file) {
+    mailOptions.attachments.push({
+      filename: req.file.originalname,
+      content: req.file.buffer,
+      contentType: req.file.mimetype,
+    });
+  }
+
+  try {
+    await transporter.sendMail(mailOptions);
+    console.log(`[Contact] Email sent → ${dest.email} (target: ${target}, from: ${email})`);
+    res.json({ success: true });
+  } catch (err) {
+    console.error('[Contact] Nodemailer error:', err.message);
+    res.status(500).json({ error: 'Failed to send email. Please try again or contact us at info@make-it.tech.' });
   }
 });
 

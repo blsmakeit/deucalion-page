@@ -51,6 +51,72 @@ document.addEventListener('DOMContentLoaded', () => {
         'A MakeIt pode treinar a nossa equipa?',
         'Que software corre no Deucalion?',
       ],
+      'hero.trust4': '20+ Projetos',
+      'about.label': 'O Supercomputador',
+      'about.title': 'O Que é o <span class="gradient-text">Deucalion</span>?',
+      'about.text1': 'O Deucalion é um dos supercomputadores mais poderosos da Europa, alojado no MACC (Minho Advanced Computing Centre) em Braga, Portugal. Parte do consórcio EuroHPC Joint Undertaking, foi inaugurado em 2023 com um desempenho de pico superior a <strong>30 petaflops</strong> — o equivalente a 30 quatrilhões de operações por segundo.',
+      'about.text2': 'Com processadores <strong>AMD EPYC</strong> de última geração e GPUs <strong>AMD Instinct MI250X</strong>, o sistema é igualmente capaz de lidar com simulações científicas tradicionais e com os workloads de IA mais exigentes — tornando Portugal num polo de computação científica e industrial de nível mundial.',
+      'about.cta': 'Ver Capacidades',
+      'about.card1.text': 'O Minho Advanced Computing Centre opera o Deucalion num data center de última geração em Braga. Infraestrutura soberana europeia, com toda a segurança e conformidade GDPR.',
+      'about.card2.text': 'Financiado pela iniciativa europeia EuroHPC, o acesso ao Deucalion é parcialmente subsidiado — nivelando o campo de jogo para empresas portuguesas face à concorrência internacional com infraestrutura HPC própria.',
+      'about.card3.title': 'Hardware de Ponta',
+      'about.card3.text': 'AMD EPYC para CPU workloads · AMD Instinct MI250X GPUs · InfiniBand HDR · Lustre Petabyte Storage · Suporte ROCm, MPI, OpenMP, TensorFlow, PyTorch.',
+      'cap.label': 'O Que é Possível',
+      'cap.title': 'O Que Pode o Deucalion Fazer Pela <span class="gradient-text">Sua Empresa?</span>',
+      'cap.subtitle': 'Do design automóvel à descoberta de fármacos — o Deucalion transforma problemas que pareciam impossíveis em resultados em semanas.',
+      'cap.cfd': 'Simule aerodinâmica, fluxo de fluidos e processos térmicos com resolução sem precedentes. Da carroçaria de um veículo ao escoamento em turbinas eólicas.',
+      'cap.drug': 'Explore milhões de candidatos moleculares e acelere ciclos de I&D de anos para semanas, com dinâmica molecular e deep learning acelerado por GPU.',
+      'cap.ai': 'Treine modelos de linguagem, visão computacional e IA generativa com clusters de GPU massivos. Fine-tuning de LLMs sobre dados proprietários da sua indústria.',
+      'cap.energy': 'Otimize parques eólicos, instalações solares e configurações de redes inteligentes. Simule milhares de layouts para maximizar produção anual de energia.',
+      'cap.finance': 'Execute milhões de cenários Monte Carlo para avaliação de risco em tempo real e otimização de portfolios. De 4 horas para 18 minutos — resultados reais.',
+      'cap.climate': 'Simulações ambientais de alta resolução que orientam decisões de política e descobertas científicas. Modelos acoplados oceano-atmosfera com 3× mais resolução.',
+      'faq.label': 'Perguntas Frequentes',
+      'faq.title': 'Tudo o Que Precisa de <span class="gradient-text">Saber</span>',
+      'faq.subtitle': 'As perguntas mais comuns sobre o Deucalion, a MakeIt, e como o HPC pode beneficiar a sua empresa.',
+      'faq.q1': 'O que é um supercomputador e porque precisa a minha empresa de um?',
+      'faq.q2': 'Como posso aceder ao Deucalion através da MakeIt?',
+      'faq.q3': 'Quanto custa utilizar o Deucalion através da MakeIt?',
+      'faq.q4': 'Quanto tempo demora um projeto típico?',
+      'faq.q5': 'Os meus dados e propriedade intelectual estão seguros?',
+      'faq.q6': 'O que é o EuroHPC e porque importa para empresas portuguesas?',
+      'faq.q7': 'A MakeIt pode treinar a nossa equipa?',
+      'faq.a1': '<p>Um supercomputador realiza centenas de biliões de cálculos por segundo — muito além do que mesmo um grande cluster de workstations consegue alcançar.</p><p>A sua empresa pode beneficiar se precisar de: processar conjuntos de dados massivos que excedem a capacidade atual da sua infraestrutura; executar simulações físicas complexas (aerodinâmica, mecânica estrutural, escoamento de fluidos); treinar modelos de IA ou machine learning de grande escala; ou explorar problemas de otimização com milhões de variáveis.</p><p>Se os seus engenheiros esperam horas ou dias pelos resultados de uma simulação, ou se tem uma questão de investigação que parece computacionalmente \'impossível\', é um sinal forte de que o HPC pode transformar o seu trabalho.</p>',
+      'faq.a2': '<p>A MakeIt gere todo o processo — não precisa de qualquer experiência prévia em HPC. O processo típico é:</p><ol><li><strong>Consulta inicial gratuita</strong> para compreender o seu problema e avaliar viabilidade.</li><li><strong>Design de arquitetura</strong> computacional e estimativa de recursos necessários.</li><li>A MakeIt <strong>candidata-se a alocações de tempo</strong> de computação no Deucalion em seu nome.</li><li>Os nossos engenheiros <strong>desenvolvem ou adaptam</strong> o seu software para execução paralela eficiente.</li><li><strong>Executamos as computações</strong>, monitorizamos o progresso e resolvemos problemas.</li><li><strong>Entregamos os resultados</strong> com análise completa, visualizações e documentação.</li></ol><p>Você foca-se na sua área de especialização — nós tratamos de tudo o que é técnico.</p>',
+      'faq.a3': '<p>Os custos dependem do âmbito, complexidade e duração do projeto. A MakeIt oferece:</p><ul><li><strong>Pacotes de preço fixo por projeto</strong> para estudos bem definidos.</li><li><strong>Modelos de retainer</strong> para trabalhos contínuos ou exploratórios.</li></ul><p>Importantemente, o tempo de computação no Deucalion é significativamente <strong>subsidiado pelo financiamento EuroHPC</strong>, o que reduz dramaticamente os custos de infraestrutura face a HPC comercial em cloud para projetos elegíveis.</p><p><strong>A consulta inicial é sempre gratuita</strong> e inclui uma estimativa de custos detalhada antes de qualquer compromisso.</p>',
+      'faq.a4': '<ul><li><strong>Estudos de viabilidade ou simulações piloto:</strong> 2–4 semanas.</li><li><strong>Campanhas de simulação de média escala ou desenvolvimento de modelos ML:</strong> 4–8 semanas.</li><li><strong>Projetos de grande escala multi-física ou modelos climáticos de longa duração:</strong> 2–6 meses.</li></ul><p>Definimos sempre marcos claros e fornecemos relatórios de progresso semanais. O tempo de entrega é dramaticamente mais rápido — como os nossos casos de estudo mostram, comprimimos 18 meses de descoberta de fármacos em 3 semanas.</p>',
+      'faq.a5': '<p>Absolutamente. A MakeIt opera sob padrões rigorosos de governança de dados:</p><ul><li>Conformidade total com o <strong>RGPD</strong>.</li><li>Assinamos <strong>NDAs abrangentes</strong> com todos os clientes antes de qualquer envolvimento.</li><li>Práticas alinhadas com <strong>ISO 27001</strong> de segurança da informação.</li><li>Todos os dados armazenados em <strong>sistemas encriptados com controlos de acesso</strong>.</li><li>A infraestrutura do Deucalion é operada pelo MACC com protocolos de segurança ao nível da UE.</li></ul><p>A sua propriedade intelectual permanece inteiramente sua.</p>',
+      'faq.a6': '<p>O EuroHPC (European High Performance Computing Joint Undertaking) é uma iniciativa da UE para construir e operar infraestruturas de supercomputação de classe mundial em toda a Europa. Financiou o Deucalion como sistema flagship de Portugal.</p><p>Para empresas portuguesas, o EuroHPC é importante porque:</p><ul><li>Proporciona <strong>acesso subsidiado</strong> a infraestrutura que custaria centenas de milhões de euros.</li><li>Nivela o campo de jogo face a concorrentes internacionais maiores com infraestrutura HPC própria.</li><li>Mantém os seus dados dentro da <strong>soberania europeia</strong> e dos quadros regulatórios.</li><li>Desenvolve competências e competitividade nacional em setores tecnológicos estratégicos.</li></ul>',
+      'faq.a7': '<p>Sim. A MakeIt oferece formação adaptada a diferentes níveis de competência:</p><ul><li><strong>Sessões introdutórias de consciencialização HPC</strong> para gestores técnicos e decisores.</li><li><strong>Cursos práticos de programação paralela</strong> (MPI, OpenMP, programação GPU com ROCm/CUDA).</li><li><strong>Formação específica por domínio</strong> para CFD, simulação molecular ou workloads de ML.</li><li><strong>Transferência de conhecimento</strong> ao longo de todos os envolvimentos de projeto.</li></ul><p>Acreditamos em capacitar os clientes, não em criar dependência.</p>',
+      'faq.cta.text': 'Não encontrou a resposta que procurava?',
+      'faq.cta.btn': 'Fazer uma Pergunta',
+      'contact.title': 'Pronto para Resolver o Seu Maior <span class="gradient-text">Desafio Computacional?</span>',
+      'contact.subtitle': 'Junte-se às empresas de Portugal e Europa que transformaram a sua I&D, operações e inovação com a MakeIt e o Deucalion. A consulta inicial é gratuita — sem compromisso.',
+      'contact.btn1': 'Enviar Mensagem',
+      'contact.btn2': 'Agendar Consulta',
+      'contact.trust1': 'Consulta inicial gratuita',
+      'contact.trust2': 'Resposta em 1 dia útil',
+      'contact.trust3': 'NDA disponível',
+      'contact.trust4': 'Sem compromisso',
+      'mobile.cta': 'Contactar',
+      'modal.title': 'Enviar Mensagem',
+      'modal.title.makeit': 'Contactar a MAKE IT',
+      'modal.title.deucalion': 'Contactar o Deucalion',
+      'modal.title.cotec': 'Contactar a COTEC',
+      'modal.label.to': 'Para *',
+      'modal.label.name': 'Nome *',
+      'modal.label.email': 'Email *',
+      'modal.label.subject': 'Assunto',
+      'modal.label.message': 'Mensagem *',
+      'modal.label.attachment': 'Anexo (opcional)',
+      'modal.placeholder.name': 'O seu nome',
+      'modal.placeholder.subject': 'Consulta sobre o Deucalion',
+      'modal.placeholder.message': 'Descreva o seu projeto ou questão...',
+      'modal.file.label': 'Adicionar ficheiro',
+      'modal.submit': 'Enviar Mensagem',
+      'modal.sending': 'A enviar...',
+      'modal.success': 'Mensagem enviada com sucesso! Entraremos em contacto brevemente.',
+      'modal.error': 'Erro ao enviar. Por favor tente novamente ou contacte info@make-it.tech.',
+      'modal.error.fields': 'Por favor preencha nome, email e mensagem.',
     },
     en: {
       'nav.cta': 'Contact',
@@ -87,6 +153,72 @@ document.addEventListener('DOMContentLoaded', () => {
         'Can MakeIt train our team?',
         'What software runs on Deucalion?',
       ],
+      'hero.trust4': '20+ Projects',
+      'about.label': 'The Supercomputer',
+      'about.title': 'What is <span class="gradient-text">Deucalion</span>?',
+      'about.text1': 'Deucalion is one of Europe\'s most powerful supercomputers, hosted at MACC (Minho Advanced Computing Centre) in Braga, Portugal. Part of the EuroHPC Joint Undertaking, it was inaugurated in 2023 with peak performance exceeding <strong>30 petaflops</strong> — the equivalent of 30 quadrillion operations per second.',
+      'about.text2': 'Powered by next-generation <strong>AMD EPYC</strong> processors and <strong>AMD Instinct MI250X</strong> GPUs, the system handles both traditional scientific simulations and the most demanding AI workloads — making Portugal a world-class hub for scientific and industrial computing.',
+      'about.cta': 'See Capabilities',
+      'about.card1.text': 'The Minho Advanced Computing Centre operates Deucalion in a state-of-the-art data center in Braga. European sovereign infrastructure, with full security and GDPR compliance.',
+      'about.card2.text': 'Funded by the EuroHPC European initiative, access to Deucalion is partially subsidized — leveling the playing field for Portuguese companies against international competition with private HPC infrastructure.',
+      'about.card3.title': 'Cutting-Edge Hardware',
+      'about.card3.text': 'AMD EPYC for CPU workloads · AMD Instinct MI250X GPUs · InfiniBand HDR · Lustre Petabyte Storage · ROCm, MPI, OpenMP, TensorFlow, PyTorch support.',
+      'cap.label': "What's Possible",
+      'cap.title': 'What Can Deucalion Do For <span class="gradient-text">Your Business?</span>',
+      'cap.subtitle': 'From automotive design to drug discovery — Deucalion turns seemingly impossible problems into results in weeks.',
+      'cap.cfd': 'Simulate aerodynamics, fluid flow, and thermal processes with unprecedented resolution. From vehicle body shapes to flow in wind turbines.',
+      'cap.drug': 'Explore millions of molecular candidates and accelerate R&D cycles from years to weeks, with molecular dynamics and GPU-accelerated deep learning.',
+      'cap.ai': 'Train language models, computer vision, and generative AI with massive GPU clusters. Fine-tune LLMs on your industry\'s proprietary data.',
+      'cap.energy': 'Optimize wind farms, solar installations, and smart grid configurations. Simulate thousands of layouts to maximize annual energy production.',
+      'cap.finance': 'Run millions of Monte Carlo scenarios for real-time risk assessment and portfolio optimization. From 4 hours to 18 minutes — real results.',
+      'cap.climate': 'High-resolution environmental simulations that guide policy decisions and scientific discoveries. Coupled ocean-atmosphere models with 3× more resolution.',
+      'faq.label': 'Frequently Asked Questions',
+      'faq.title': 'Everything You Need to <span class="gradient-text">Know</span>',
+      'faq.subtitle': 'The most common questions about Deucalion, MakeIt, and how HPC can benefit your company.',
+      'faq.q1': 'What is a supercomputer and why does my company need one?',
+      'faq.q2': 'How can I access Deucalion through MakeIt?',
+      'faq.q3': 'What does it cost to use Deucalion through MakeIt?',
+      'faq.q4': 'How long does a typical project take?',
+      'faq.q5': 'Is my data and intellectual property safe?',
+      'faq.q6': 'What is EuroHPC and why does it matter for Portuguese companies?',
+      'faq.q7': 'Can MakeIt train our team?',
+      'faq.a1': '<p>A supercomputer performs hundreds of trillions of calculations per second — far beyond what even a large cluster of workstations can achieve.</p><p>Your company could benefit if you need to: process massive datasets that exceed your current infrastructure capacity; run complex physics simulations (aerodynamics, structural mechanics, fluid flow); train large AI or machine learning models; or explore optimization problems with millions of variables.</p><p>If your engineers are waiting hours or days for simulation results, or if you have a research question that seems computationally "impossible," that\'s a strong signal that HPC could transform your work.</p>',
+      'faq.a2': '<p>MakeIt manages the entire process — you don\'t need any prior HPC expertise. The typical process is:</p><ol><li><strong>Free initial consultation</strong> to understand your problem and assess feasibility.</li><li><strong>Computational architecture design</strong> and resource requirements estimate.</li><li>MakeIt <strong>applies for computing time allocations</strong> on Deucalion on your behalf.</li><li>Our engineers <strong>develop or adapt</strong> your software for efficient parallel execution.</li><li>We <strong>run the computations</strong>, monitor progress, and troubleshoot.</li><li>We <strong>deliver results</strong> with full analysis, visualizations, and documentation.</li></ol><p>You focus on your domain expertise — we handle everything technical.</p>',
+      'faq.a3': '<p>Costs depend on project scope, complexity, and duration. MakeIt offers:</p><ul><li><strong>Fixed-price project packages</strong> for well-defined studies.</li><li><strong>Retainer models</strong> for ongoing or exploratory work.</li></ul><p>Importantly, computing time on Deucalion is significantly <strong>subsidized by EuroHPC funding</strong>, which dramatically reduces infrastructure costs compared to commercial cloud HPC for eligible projects.</p><p><strong>The initial consultation is always free</strong> and includes a detailed cost estimate before any commitment.</p>',
+      'faq.a4': '<ul><li><strong>Feasibility studies or pilot simulations:</strong> 2–4 weeks.</li><li><strong>Medium-scale simulation campaigns or ML model development:</strong> 4–8 weeks.</li><li><strong>Large-scale multi-physics projects or long-running climate models:</strong> 2–6 months.</li></ul><p>We always define clear milestones and provide weekly progress reports. Turnaround is dramatically faster — as our case studies show, we compressed 18 months of drug discovery work into 3 weeks.</p>',
+      'faq.a5': '<p>Absolutely. MakeIt operates under strict data governance standards:</p><ul><li>Full compliance with <strong>GDPR</strong>.</li><li>We sign <strong>comprehensive NDAs</strong> with all clients before any engagement.</li><li>Practices aligned with <strong>ISO 27001</strong> information security standards.</li><li>All data stored in <strong>encrypted systems with access controls</strong>.</li><li>Deucalion\'s infrastructure is operated by MACC with EU-level security protocols.</li></ul><p>Your intellectual property remains entirely yours.</p>',
+      'faq.a6': '<p>EuroHPC (European High Performance Computing Joint Undertaking) is an EU initiative to build and operate world-class supercomputing infrastructure across Europe. It funded Deucalion as Portugal\'s flagship system.</p><p>For Portuguese companies, EuroHPC matters because:</p><ul><li>It provides <strong>subsidized access</strong> to infrastructure that would otherwise cost hundreds of millions of euros.</li><li>It levels the playing field against larger international competitors with private HPC infrastructure.</li><li>It keeps your data within <strong>European sovereignty</strong> and regulatory frameworks.</li><li>It builds domestic expertise and competitiveness in strategic technology sectors.</li></ul>',
+      'faq.a7': '<p>Yes. MakeIt offers training workshops tailored to different skill levels:</p><ul><li><strong>Introductory HPC awareness sessions</strong> for technical managers and decision-makers.</li><li><strong>Hands-on parallel programming courses</strong> (MPI, OpenMP, GPU programming with ROCm/CUDA).</li><li><strong>Domain-specific training</strong> for CFD, molecular simulation, or ML workloads.</li><li><strong>Knowledge transfer</strong> throughout all project engagements.</li></ul><p>We believe in empowering clients, not creating dependency.</p>',
+      'faq.cta.text': "Didn't find the answer you were looking for?",
+      'faq.cta.btn': 'Ask a Question',
+      'contact.title': 'Ready to Solve Your Biggest <span class="gradient-text">Computational Challenge?</span>',
+      'contact.subtitle': 'Join the companies across Portugal and Europe that have transformed their R&D, operations, and innovation with MakeIt and Deucalion. The initial consultation is free — no commitment.',
+      'contact.btn1': 'Send a Message',
+      'contact.btn2': 'Schedule a Consultation',
+      'contact.trust1': 'Free initial consultation',
+      'contact.trust2': 'Response within 1 business day',
+      'contact.trust3': 'NDA available',
+      'contact.trust4': 'No commitment',
+      'mobile.cta': 'Contact',
+      'modal.title': 'Send Message',
+      'modal.title.makeit': 'Contact MAKE IT',
+      'modal.title.deucalion': 'Contact Deucalion',
+      'modal.title.cotec': 'Contact COTEC',
+      'modal.label.to': 'To *',
+      'modal.label.name': 'Name *',
+      'modal.label.email': 'Email *',
+      'modal.label.subject': 'Subject',
+      'modal.label.message': 'Message *',
+      'modal.label.attachment': 'Attachment (optional)',
+      'modal.placeholder.name': 'Your name',
+      'modal.placeholder.subject': 'Inquiry about Deucalion',
+      'modal.placeholder.message': 'Describe your project or question...',
+      'modal.file.label': 'Add file',
+      'modal.submit': 'Send Message',
+      'modal.sending': 'Sending...',
+      'modal.success': 'Message sent successfully! We will get back to you shortly.',
+      'modal.error': 'Failed to send. Please try again or contact info@make-it.tech.',
+      'modal.error.fields': 'Please fill in name, email and message.',
     },
   };
 
@@ -802,6 +934,160 @@ document.addEventListener('DOMContentLoaded', () => {
   if (prefersReducedMotion) {
     // Immediately show all fade-up elements without animation
     fadeElements.forEach(el => el.classList.add('visible'));
+  }
+
+  // ── 13. CONTACT MODAL ─────────────────────────────────────────
+  const contactModal    = document.getElementById('contact-modal');
+  const modalClose      = document.getElementById('modal-close');
+  const contactForm     = document.getElementById('contact-form');
+  const toSelect        = document.getElementById('contact-to-select');
+  const submitBtn       = document.getElementById('contact-submit-btn');
+  const submitBtnText   = document.getElementById('submit-btn-text');
+  const submitIcon      = document.getElementById('submit-icon');
+  const submitSpinner   = document.getElementById('submit-spinner');
+  const contactFeedback = document.getElementById('contact-feedback');
+  const fileInput       = document.getElementById('contact-attachment');
+  const fileNameDisplay = document.getElementById('file-name-display');
+
+  function openContactModal(target) {
+    if (!contactModal) return;
+
+    // Reset form state first, then set target (reset() would overwrite the value)
+    if (contactForm) contactForm.reset();
+    if (fileNameDisplay) fileNameDisplay.textContent = '';
+
+    // Pre-select target in dropdown after reset
+    if (toSelect) toSelect.value = (target && toSelect.querySelector(`option[value="${target}"]`)) ? target : 'makeit';
+    hideFeedback();
+    setSubmitIdle();
+
+    contactModal.classList.add('is-open');
+    contactModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    // Focus first input
+    setTimeout(() => {
+      const first = contactForm?.querySelector('.form-input');
+      if (first) first.focus();
+    }, 80);
+  }
+
+  function closeContactModal() {
+    if (!contactModal) return;
+    contactModal.classList.remove('is-open');
+    contactModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function hideFeedback() {
+    if (!contactFeedback) return;
+    contactFeedback.hidden = true;
+    contactFeedback.textContent = '';
+    contactFeedback.className = 'contact-feedback';
+  }
+
+  function showFeedback(msg, type) {
+    if (!contactFeedback) return;
+    contactFeedback.textContent = msg;
+    contactFeedback.className = `contact-feedback feedback-${type}`;
+    contactFeedback.hidden = false;
+  }
+
+  function setSubmitLoading() {
+    if (!submitBtn) return;
+    submitBtn.disabled = true;
+    if (submitIcon) submitIcon.hidden = true;
+    if (submitSpinner) submitSpinner.hidden = false;
+    const t = TRANSLATIONS[currentLang] || TRANSLATIONS['pt'];
+    if (submitBtnText) submitBtnText.textContent = t['modal.sending'];
+  }
+
+  function setSubmitIdle() {
+    if (!submitBtn) return;
+    submitBtn.disabled = false;
+    if (submitIcon) submitIcon.hidden = false;
+    if (submitSpinner) submitSpinner.hidden = true;
+    const t = TRANSLATIONS[currentLang] || TRANSLATIONS['pt'];
+    if (submitBtnText) submitBtnText.textContent = t['modal.submit'];
+  }
+
+  // Open modal on any data-contact-target button/link
+  document.querySelectorAll('[data-contact-target]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      openContactModal(el.dataset.contactTarget || 'makeit');
+    });
+  });
+
+  // Close on X button
+  if (modalClose) modalClose.addEventListener('click', closeContactModal);
+
+  // Close on overlay click (outside panel)
+  if (contactModal) {
+    contactModal.addEventListener('click', (e) => {
+      if (e.target === contactModal) closeContactModal();
+    });
+  }
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && contactModal?.classList.contains('is-open')) {
+      closeContactModal();
+    }
+  });
+
+  // File input — show chosen filename
+  if (fileInput && fileNameDisplay) {
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files?.[0];
+      fileNameDisplay.textContent = file ? file.name : '';
+    });
+  }
+
+  // Form submit
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      hideFeedback();
+
+      const t = TRANSLATIONS[currentLang] || TRANSLATIONS['pt'];
+      const name    = contactForm.querySelector('#contact-name')?.value.trim();
+      const email   = contactForm.querySelector('#contact-email')?.value.trim();
+      const message = contactForm.querySelector('#contact-message')?.value.trim();
+
+      if (!name || !email || !message) {
+        showFeedback(t['modal.error.fields'], 'error');
+        return;
+      }
+
+      setSubmitLoading();
+
+      const formData = new FormData(contactForm);
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          body: formData,
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (res.ok && data.success) {
+          showFeedback(t['modal.success'], 'success');
+          contactForm.reset();
+          if (fileNameDisplay) fileNameDisplay.textContent = '';
+          setSubmitIdle();
+          // Auto-close after 3 s
+          setTimeout(closeContactModal, 3000);
+        } else {
+          showFeedback(data.error || t['modal.error'], 'error');
+          setSubmitIdle();
+        }
+      } catch {
+        showFeedback(t['modal.error'], 'error');
+        setSubmitIdle();
+      }
+    });
   }
 
   // ── Done ──────────────────────────────────────────────────────
