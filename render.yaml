@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: cotec-deucalion
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ANTHROPIC_API_KEY
+        sync: false        # Set manually in Render dashboard (secret)
+      - key: ALLOWED_ORIGIN
+        sync: false        # Set to your Render URL, e.g. https://cotec-deucalion.onrender.com
+    healthCheckPath: /
+    autoDeploy: true

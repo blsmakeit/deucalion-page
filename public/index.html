@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MakeIt Technology — Aceda ao poder do supercomputador Deucalion, um dos mais avançados da Europa, para resolver os desafios computacionais mais complexos da sua empresa." />
-  <meta name="keywords" content="Deucalion, supercomputador, HPC, MakeIt, EuroHPC, MACC, Braga, Portugal, inteligência artificial, simulação, computação de alto desempenho" />
+  <meta name="description" content="Programa COTEC OpenDay — MakeIt Technology demonstra como aceder ao Deucalion, um dos supercomputadores mais avançados da Europa, para resolver os desafios computacionais da sua empresa." />
+  <meta name="keywords" content="Deucalion, supercomputador, HPC, MakeIt, COTEC, EuroHPC, MACC, Braga, Portugal, inteligência artificial, simulação, computação de alto desempenho" />
   <meta name="author" content="MakeIt Technology" />
-  <meta property="og:title" content="MakeIt × Deucalion — HPC & AI para a Indústria Portuguesa" />
-  <meta property="og:description" content="Transforme os desafios computacionais mais complexos da sua empresa com o poder do supercomputador Deucalion. MakeIt faz a ponte." />
+  <meta property="og:title" content="Deucalion × COTEC OpenDay — Supercomputação para a Indústria Portuguesa" />
+  <meta property="og:description" content="No âmbito do Programa COTEC OpenDay, a MakeIt demonstra como o Deucalion pode transformar os desafios computacionais mais complexos da sua empresa." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://make-it.tech/deucalion" />
   <meta name="theme-color" content="#09090B" />
-  <title>MakeIt × Deucalion — Supercumputação ao Serviço da Indústria</title>
+  <title>Deucalion × COTEC OpenDay — Supercomputação ao Serviço da Indústria</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,34 +35,40 @@
   <nav class="navbar" id="navbar" role="navigation" aria-label="Navegação principal">
     <div class="nav-inner container">
 
-      <!-- Logo -->
-      <a href="/" class="nav-logo" aria-label="MakeIt — página inicial">
-        <svg class="logo-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#EF5350"/>
-              <stop offset="100%" stop-color="#E53935"/>
-            </linearGradient>
-          </defs>
-          <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" fill="url(#logoGrad)" opacity="0.15"/>
-          <path d="M14 4 L10 14 L14 12 L18 22 L14 12 L18 10 Z" fill="url(#logoGrad)" stroke="url(#logoGrad)" stroke-width="0.5"/>
-          <circle cx="14" cy="14" r="2" fill="url(#logoGrad)"/>
-        </svg>
-        <span class="logo-text">Make<span class="logo-accent">It</span></span>
-      </a>
+      <!-- Logo + COTEC badge -->
+      <div class="nav-brand">
+        <a href="/" class="nav-logo" aria-label="COTEC Open Day — página inicial">
+          <svg class="logo-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#EF5350"/>
+                <stop offset="100%" stop-color="#E53935"/>
+              </linearGradient>
+            </defs>
+            <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" fill="url(#logoGrad)" opacity="0.15"/>
+            <path d="M14 4 L10 14 L14 12 L18 22 L14 12 L18 10 Z" fill="url(#logoGrad)" stroke="url(#logoGrad)" stroke-width="0.5"/>
+            <circle cx="14" cy="14" r="2" fill="url(#logoGrad)"/>
+          </svg>
+          <span class="logo-text">COTEC</span>
+        </a>
+      </div>
 
       <!-- Desktop Nav Links -->
       <ul class="nav-links" role="list">
-        <li><a href="#about" class="nav-link">Deucalion</a></li>
-        <li><a href="#projects" class="nav-link">Projetos</a></li>
         <li><a href="#chat" class="nav-link">Chat AI</a></li>
+        <li><a href="#about" class="nav-link">Deucalion</a></li>
         <li><a href="#faq" class="nav-link">FAQ</a></li>
       </ul>
 
       <!-- CTA + Hamburger -->
       <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Idioma / Language">
+          <button class="lang-btn active" data-lang="pt" aria-pressed="true">PT</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
         <a href="mailto:info@make-it.tech" class="btn btn-primary btn-sm" aria-label="Contactar MakeIt por email">
-          Contactar
+          <span data-i18n="nav.cta">Contactar</span>
         </a>
         <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
           <span class="ham-line"></span>
@@ -75,9 +81,8 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menu de navegação móvel" aria-hidden="true">
       <ul class="mobile-links" role="list">
-        <li><a href="#about" class="mobile-link">Deucalion</a></li>
-        <li><a href="#projects" class="mobile-link">Projetos</a></li>
         <li><a href="#chat" class="mobile-link">Chat AI</a></li>
+        <li><a href="#about" class="mobile-link">Deucalion</a></li>
         <li><a href="#faq" class="mobile-link">FAQ</a></li>
         <li><a href="mailto:info@make-it.tech" class="mobile-link mobile-cta">Contactar</a></li>
       </ul>
@@ -102,29 +107,28 @@
         <!-- Left: Text content -->
         <div class="hero-content">
 
-          <div class="badge-chip fade-up">
-            <span class="badge-flag">🇵🇹</span>
-            <span>EuroHPC · Deucalion · MACC Braga</span>
+          <div class="event-badge fade-up">
+            <span class="event-badge-dot" aria-hidden="true"></span>
+            <span data-i18n="hero.event">COTEC Open Day</span>
           </div>
 
           <h1 id="hero-heading" class="hero-title fade-up">
-            Unlock the Power of
-            <span class="gradient-text">Europe's Most Advanced</span>
-            Supercomputer
+            <span class="gradient-text">Deucalion</span>
+            <span data-i18n="hero.title">Supercomputação Europeia para a Indústria</span>
           </h1>
 
-          <p class="hero-subtitle fade-up">
-            MakeIt bridges your company's most complex challenges with Deucalion's petaflop&#8209;scale computing power. From drug discovery to aerodynamics — we make the impossible, computable.
+          <p class="hero-subtitle fade-up" data-i18n="hero.subtitle">
+            A MakeIt faz a ponte entre a sua empresa e os 30+ petaflops do Deucalion — sem precisar de experiência em HPC.
           </p>
 
           <div class="hero-actions fade-up">
-            <a href="#projects" class="btn btn-primary btn-lg">
-              <i data-lucide="zap" aria-hidden="true"></i>
-              Explorar Projetos
+            <a href="#chat" class="btn btn-primary btn-lg" id="hero-chat-btn">
+              <i data-lucide="message-circle" aria-hidden="true"></i>
+              <span data-i18n="hero.cta1">Falar com o AI Expert</span>
             </a>
-            <a href="#chat" class="btn btn-ghost btn-lg" id="hero-chat-btn">
-              Ask the AI
-              <i data-lucide="arrow-down" aria-hidden="true"></i>
+            <a href="mailto:info@make-it.tech?subject=Consulta%20COTEC%20OpenDay%20%E2%80%94%20Deucalion" class="btn btn-ghost btn-lg">
+              <i data-lucide="mail" aria-hidden="true"></i>
+              <span data-i18n="hero.cta2">Agendar Consulta</span>
             </a>
           </div>
 
@@ -132,73 +136,91 @@
           <div class="hero-trust fade-up">
             <div class="trust-item">
               <i data-lucide="shield-check" aria-hidden="true"></i>
-              <span>GDPR Compliant</span>
+              <span>GDPR</span>
             </div>
             <div class="trust-item">
               <i data-lucide="award" aria-hidden="true"></i>
               <span>EuroHPC Partner</span>
             </div>
             <div class="trust-item">
+              <i data-lucide="zap" aria-hidden="true"></i>
+              <span>30+ PetaFLOPS</span>
+            </div>
+            <div class="trust-item">
               <i data-lucide="users" aria-hidden="true"></i>
-              <span>20+ Projects</span>
+              <span>20+ Projetos</span>
             </div>
           </div>
         </div>
 
-        <!-- Right: Animated Terminal Card -->
-        <div class="terminal-card fade-up" aria-label="Estado em tempo real do supercomputador Deucalion" role="complementary">
-          <div class="terminal-header">
-            <div class="terminal-dots" aria-hidden="true">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
-            </div>
-            <span class="terminal-title">deucalion.macc.pt — live status</span>
-          </div>
-          <div class="terminal-body">
-            <div class="terminal-line">
-              <span class="term-prompt">$</span>
-              <span class="term-cmd">macc status --live</span>
-            </div>
-            <div class="terminal-divider"></div>
-            <div class="terminal-metric">
-              <span class="term-label">System Status</span>
-              <span class="term-value status-online">
-                <span class="status-dot" aria-hidden="true"></span>
-                ONLINE
-              </span>
-            </div>
-            <div class="terminal-metric">
-              <span class="term-label">Active CPU Cores</span>
-              <span class="term-value term-accent" id="term-cores">120,832</span>
-            </div>
-            <div class="terminal-metric">
-              <span class="term-label">Peak Performance</span>
-              <span class="term-value term-brand">30.2 PetaFLOPS</span>
-            </div>
-            <div class="terminal-metric">
-              <span class="term-label">GPU Nodes</span>
-              <span class="term-value term-accent">1,024</span>
-            </div>
-            <div class="terminal-metric">
-              <span class="term-label">Jobs Running</span>
-              <span class="term-value" id="term-jobs">2,847</span>
-            </div>
-            <div class="terminal-metric">
-              <span class="term-label">Efficiency</span>
-              <span class="term-value term-green" id="term-efficiency">94.7%</span>
-            </div>
-            <div class="terminal-metric">
-              <span class="term-label">Storage Available</span>
-              <span class="term-value">1.2 PetaByte</span>
-            </div>
-            <div class="terminal-divider"></div>
-            <div class="terminal-line term-connected">
-              <span class="connected-dot" aria-hidden="true"></span>
-              <span>MakeIt.tech connected</span>
-              <span class="cursor" aria-hidden="true">_</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         AI CHAT SECTION  (feature principal)
+    ════════════════════════════════════════════════════════════════ -->
+    <section class="chat-section" id="chat" aria-labelledby="chat-heading">
+      <div class="container">
+
+        <!-- Header -->
+        <div class="chat-header">
+          <div class="section-label fade-up">AI Expert</div>
+          <h2 id="chat-heading" class="section-title fade-up">
+            Ask Our <span class="gradient-text">AI Expert</span>
+          </h2>
+          <p class="chat-tagline fade-up" data-i18n="chat.tagline">
+            Respostas instantâneas sobre o Deucalion e como o HPC pode transformar o seu negócio.
+          </p>
+        </div>
+
+        <!-- Chat widget (full-width, centered) -->
+        <div class="chat-widget fade-up" role="region" aria-label="Interface de chat com IA">
+
+          <!-- Messages -->
+          <div class="chat-messages" id="chat-messages" role="log" aria-live="polite" aria-label="Histórico de mensagens">
+            <div class="chat-message ai-message" role="article">
+              <div class="msg-avatar" aria-hidden="true"><i data-lucide="cpu"></i></div>
+              <div class="msg-bubble">
+                <p><span data-i18n-html="chat.welcome">Olá! Sou o assistente AI da MakeIt. Posso ajudá-lo com questões sobre o <strong>Deucalion</strong>, HPC e AI. O que pretende saber?</span></p>
+              </div>
             </div>
           </div>
+
+          <!-- Suggestion chips (filtradas dinamicamente por JS) -->
+          <div class="chat-suggestions" id="chat-suggestions" aria-label="Sugestões de perguntas"></div>
+
+          <!-- Input area -->
+          <div class="chat-footer">
+            <span class="rate-limit-info" id="rate-limit-info" hidden role="alert"></span>
+
+            <form class="chat-form" id="chat-form" novalidate aria-label="Enviar mensagem">
+              <div class="chat-input-wrapper">
+                <label for="chat-input" class="sr-only">Escreva a sua pergunta</label>
+                <textarea
+                  id="chat-input"
+                  class="chat-input"
+                  placeholder="Escreva a sua pergunta sobre Deucalion..."
+                  rows="1"
+                  maxlength="500"
+                  aria-describedby="char-counter"
+                  data-i18n-placeholder="chat.placeholder"
+                ></textarea>
+                <button type="submit" class="chat-send-btn" id="chat-send-btn" aria-label="Enviar mensagem">
+                  <i data-lucide="send" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="chat-input-meta">
+                <span class="char-counter" id="char-counter" aria-live="polite">0/500</span>
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="chat-disclaimer fade-up">
+          <i data-lucide="info" aria-hidden="true"></i>
+          <p data-i18n-html="chat.disclaimer">Assistente AI baseado na knowledge base da MakeIt. Para questões específicas, <a href="mailto:info@make-it.tech" class="text-link">contacte-nos diretamente</a>.</p>
         </div>
 
       </div>
@@ -286,7 +308,7 @@
             </div>
             <div class="info-card-body">
               <h3 class="info-card-title">EuroHPC Joint Undertaking</h3>
-              <p class="info-card-text">Financiado pela iniciativa europeia EuroHPC, o acesso ao Deucalion é parcialmente subsidiado — nivelar o campo de jogo para empresas portuguesas face à concorrência internacional com infraestrutura HPC própria.</p>
+              <p class="info-card-text">Financiado pela iniciativa europeia EuroHPC, o acesso ao Deucalion é parcialmente subsidiado — nivelando o campo de jogo para empresas portuguesas face à concorrência internacional com infraestrutura HPC própria.</p>
             </div>
           </div>
 
@@ -378,289 +400,6 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════
-         PROJECTS PORTFOLIO
-    ════════════════════════════════════════════════════════════════ -->
-    <section class="projects" id="projects" aria-labelledby="proj-heading">
-      <div class="container">
-        <div class="section-label fade-up">Case Studies</div>
-        <h2 id="proj-heading" class="section-title text-center fade-up">
-          Real Projects. <span class="gradient-text">Real Impact.</span>
-        </h2>
-        <p class="section-subtitle fade-up">
-          Cinco exemplos concretos de como a MakeIt transformou desafios empresariais impossíveis em resultados mensuráveis com o Deucalion.
-        </p>
-
-        <div class="projects-grid">
-
-          <!-- Project 1: Automotive -->
-          <article class="project-card fade-up" aria-labelledby="proj1-title">
-            <div class="proj-card-header">
-              <span class="industry-badge badge-automotive">Automóvel</span>
-              <button class="proj-details-toggle" aria-expanded="false" aria-controls="proj1-details">
-                <i data-lucide="chevron-down" aria-hidden="true"></i>
-              </button>
-            </div>
-            <h3 id="proj1-title" class="proj-card-title">EV Aerodynamics Optimization</h3>
-            <div class="proj-impact">
-              <span class="impact-number gradient-text">+12%</span>
-              <span class="impact-desc">Aumento de Autonomia</span>
-            </div>
-            <p class="proj-summary">Redução de 8,3% no coeficiente de arrasto de um veículo elétrico através de 1.200+ simulações CFD paralelas.</p>
-            <div class="proj-details" id="proj1-details" hidden>
-              <div class="proj-detail-section">
-                <strong>Desafio:</strong>
-                <p>Fabricante de VEs precisava otimizar o perfil aerodinâmico para maximizar autonomia. Testes em túnel de vento eram demasiado lentos e caros para iterar eficazmente.</p>
-              </div>
-              <div class="proj-detail-section">
-                <strong>Solução:</strong>
-                <p>Workflow CFD massivamente paralelo com OpenFOAM e solvers otimizados para GPU AMD. Mais de 1.200 simulações paralelas explorando milhares de combinações geométricas.</p>
-              </div>
-              <div class="proj-metrics">
-                <div class="proj-metric"><i data-lucide="clock" aria-hidden="true"></i><span>3 semanas vs 6 meses</span></div>
-                <div class="proj-metric"><i data-lucide="trending-up" aria-hidden="true"></i><span>8,3% menos arrasto</span></div>
-                <div class="proj-metric"><i data-lucide="zap" aria-hidden="true"></i><span>1.200+ simulações</span></div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 2: Pharma -->
-          <article class="project-card fade-up" aria-labelledby="proj2-title">
-            <div class="proj-card-header">
-              <span class="industry-badge badge-pharma">Farmacêutica</span>
-              <button class="proj-details-toggle" aria-expanded="false" aria-controls="proj2-details">
-                <i data-lucide="chevron-down" aria-hidden="true"></i>
-              </button>
-            </div>
-            <h3 id="proj2-title" class="proj-card-title">AI-Accelerated Drug Discovery</h3>
-            <div class="proj-impact">
-              <span class="impact-number gradient-text">3 sem.</span>
-              <span class="impact-desc">vs 18 Meses Tradicional</span>
-            </div>
-            <p class="proj-summary">47 candidatos moleculares de alto potencial identificados, três em testes clínicos, triagem de 4 milhões de compostos com IA.</p>
-            <div class="proj-details" id="proj2-details" hidden>
-              <div class="proj-detail-section">
-                <strong>Desafio:</strong>
-                <p>Empresa farmacêutica precisava de triagem de milhões de candidatos para afinidade de ligação a uma proteína-alvo associada a doença neurológica rara.</p>
-              </div>
-              <div class="proj-detail-section">
-                <strong>Solução:</strong>
-                <p>Pipeline híbrido combinando dinâmica molecular com modelo de deep learning (GNN) treinado em 50TB de dados de simulação nas GPUs do Deucalion.</p>
-              </div>
-              <div class="proj-metrics">
-                <div class="proj-metric"><i data-lucide="flask-conical" aria-hidden="true"></i><span>47 candidatos identificados</span></div>
-                <div class="proj-metric"><i data-lucide="database" aria-hidden="true"></i><span>4M compostos triados</span></div>
-                <div class="proj-metric"><i data-lucide="trending-down" aria-hidden="true"></i><span>90% redução de custo</span></div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 3: Energy -->
-          <article class="project-card fade-up" aria-labelledby="proj3-title">
-            <div class="proj-card-header">
-              <span class="industry-badge badge-energy">Energia</span>
-              <button class="proj-details-toggle" aria-expanded="false" aria-controls="proj3-details">
-                <i data-lucide="chevron-down" aria-hidden="true"></i>
-              </button>
-            </div>
-            <h3 id="proj3-title" class="proj-card-title">Wind Farm Layout Optimization</h3>
-            <div class="proj-impact">
-              <span class="impact-number gradient-text">+23%</span>
-              <span class="impact-desc">Produção Anual de Energia</span>
-            </div>
-            <p class="proj-summary">Parque eólico offshore de 200 turbinas otimizado com 500.000+ layouts simulados, gerando ~€8M adicionais por ano.</p>
-            <div class="proj-details" id="proj3-details" hidden>
-              <div class="proj-detail-section">
-                <strong>Desafio:</strong>
-                <p>Developer de energia planeava parque eólico offshore de 200 turbinas na costa atlântica portuguesa e precisava maximizar produção minimizando interferências de esteira.</p>
-              </div>
-              <div class="proj-detail-section">
-                <strong>Solução:</strong>
-                <p>Framework de simulação-otimização com FLORIS melhorado com correções LES. Algoritmo genético explorou mais de 500.000 configurações de layout.</p>
-              </div>
-              <div class="proj-metrics">
-                <div class="proj-metric"><i data-lucide="euro" aria-hidden="true"></i><span>€8M receita adicional/ano</span></div>
-                <div class="proj-metric"><i data-lucide="wind" aria-hidden="true"></i><span>500.000+ layouts testados</span></div>
-                <div class="proj-metric"><i data-lucide="calendar" aria-hidden="true"></i><span>25 anos de vida útil</span></div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 4: Finance -->
-          <article class="project-card fade-up" aria-labelledby="proj4-title">
-            <div class="proj-card-header">
-              <span class="industry-badge badge-finance">Banca</span>
-              <button class="proj-details-toggle" aria-expanded="false" aria-controls="proj4-details">
-                <i data-lucide="chevron-down" aria-hidden="true"></i>
-              </button>
-            </div>
-            <h3 id="proj4-title" class="proj-card-title">Real-Time Financial Risk Engine</h3>
-            <div class="proj-impact">
-              <span class="impact-number gradient-text">13×</span>
-              <span class="impact-desc">Cálculos Mais Rápidos</span>
-            </div>
-            <p class="proj-summary">De 4 horas para 18 minutos. Motor Monte Carlo em GPU para avaliação de risco VaR em tempo real, poupando €2,1M/ano.</p>
-            <div class="proj-details" id="proj4-details" hidden>
-              <div class="proj-detail-section">
-                <strong>Desafio:</strong>
-                <p>Banco português levava 4 horas para avaliações de risco noturnas e não conseguia lidar com correlações multi-ativo complexas exigidas pelo Basileia IV.</p>
-              </div>
-              <div class="proj-detail-section">
-                <strong>Solução:</strong>
-                <p>Motor de risco reimplementado como aplicação Monte Carlo distribuída GPU-acelerada no Deucalion. Gera 10 milhões de cenários em minutos.</p>
-              </div>
-              <div class="proj-metrics">
-                <div class="proj-metric"><i data-lucide="clock" aria-hidden="true"></i><span>4h → 18 min</span></div>
-                <div class="proj-metric"><i data-lucide="layers" aria-hidden="true"></i><span>10× mais cenários</span></div>
-                <div class="proj-metric"><i data-lucide="piggy-bank" aria-hidden="true"></i><span>€2,1M poupados/ano</span></div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 5: Environment -->
-          <article class="project-card fade-up" aria-labelledby="proj5-title">
-            <div class="proj-card-header">
-              <span class="industry-badge badge-env">Ambiente</span>
-              <button class="proj-details-toggle" aria-expanded="false" aria-controls="proj5-details">
-                <i data-lucide="chevron-down" aria-hidden="true"></i>
-              </button>
-            </div>
-            <h3 id="proj5-title" class="proj-card-title">Atlantic Ocean Circulation Model</h3>
-            <div class="proj-impact">
-              <span class="impact-number gradient-text">3×</span>
-              <span class="impact-desc">Resolução vs Modelo Anterior</span>
-            </div>
-            <p class="proj-summary">Modelo de circulação do Atlântico Norte com 3× mais resolução, publicado em revistas de topo, a informar a política costeira portuguesa.</p>
-            <div class="proj-details" id="proj5-details" hidden>
-              <div class="proj-detail-section">
-                <strong>Desafio:</strong>
-                <p>Instituições de investigação precisavam de modelo de alta resolução da circulação do Atlântico Norte para estudar impactos das alterações climáticas na costa portuguesa.</p>
-              </div>
-              <div class="proj-detail-section">
-                <strong>Solução:</strong>
-                <p>Modelo acoplado NEMO (oceano) + WRF (atmosfera) no Deucalion com 3× mais resolução espacial — de 10km para 3km. Simulação hindcast de 50 anos + projeções de 30 anos.</p>
-              </div>
-              <div class="proj-metrics">
-                <div class="proj-metric"><i data-lucide="book-open" aria-hidden="true"></i><span>3 artigos em revistas top</span></div>
-                <div class="proj-metric"><i data-lucide="map" aria-hidden="true"></i><span>Novos padrões descobertos</span></div>
-                <div class="proj-metric"><i data-lucide="landmark" aria-hidden="true"></i><span>Política nacional informada</span></div>
-              </div>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="projects-cta fade-up">
-          <p>Tem um desafio computacional que parece impossível?</p>
-          <a href="mailto:info@make-it.tech?subject=Consulta%20Inicial%20%E2%80%94%20Projeto%20HPC" class="btn btn-primary btn-lg">
-            Falar com um Especialista
-            <i data-lucide="arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════
-         AI CHAT SECTION
-    ════════════════════════════════════════════════════════════════ -->
-    <section class="chat-section" id="chat" aria-labelledby="chat-heading">
-      <div class="container chat-inner">
-
-        <!-- Left: Info -->
-        <div class="chat-info">
-          <div class="section-label fade-up">AI Expert</div>
-          <h2 id="chat-heading" class="section-title fade-up">
-            Ask Our <span class="gradient-text">AI Expert</span>
-          </h2>
-          <p class="chat-desc fade-up">
-            Obtenha respostas instantâneas sobre o Deucalion, as capacidades da MakeIt e como o HPC pode transformar o seu negócio. O nosso assistente de IA tem acesso à nossa base de conhecimento completa.
-          </p>
-
-          <div class="suggestions fade-up" role="list" aria-label="Perguntas sugeridas">
-            <p class="suggestions-label">Sugestões:</p>
-            <button class="suggestion-chip" role="listitem">
-              What can Deucalion do for my industry?
-            </button>
-            <button class="suggestion-chip" role="listitem">
-              How does MakeIt handle a project from start to finish?
-            </button>
-            <button class="suggestion-chip" role="listitem">
-              What does it cost to use Deucalion?
-            </button>
-            <button class="suggestion-chip" role="listitem">
-              How long does a typical HPC project take?
-            </button>
-          </div>
-
-          <div class="chat-disclaimer fade-up">
-            <i data-lucide="info" aria-hidden="true"></i>
-            <p>O assistente AI responde com base na nossa base de conhecimento. Para uma consulta personalizada completa, <a href="mailto:info@make-it.tech" class="text-link">contacte-nos diretamente</a>.</p>
-          </div>
-        </div>
-
-        <!-- Right: Chat interface -->
-        <div class="chat-interface fade-up" role="region" aria-label="Interface de chat com IA">
-
-          <!-- Messages container -->
-          <div class="chat-messages" id="chat-messages" role="log" aria-live="polite" aria-label="Histórico de mensagens">
-            <!-- Welcome message -->
-            <div class="chat-message ai-message" role="article">
-              <div class="msg-avatar" aria-hidden="true">
-                <i data-lucide="cpu"></i>
-              </div>
-              <div class="msg-bubble">
-                <p>Olá! Sou o assistente de IA da MakeIt. Posso responder às suas perguntas sobre o Deucalion, as nossas capacidades de HPC e AI, e como podemos ajudar a sua empresa.</p>
-                <p>Em que posso ajudar?</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Chat footer -->
-          <div class="chat-footer">
-            <div class="chat-status-bar">
-              <span class="messages-remaining" id="messages-remaining" aria-live="polite">
-                <i data-lucide="message-circle" aria-hidden="true"></i>
-                <span id="remaining-count">20</span> mensagens restantes
-              </span>
-              <span class="rate-limit-info" id="rate-limit-info" hidden role="alert"></span>
-            </div>
-
-            <form class="chat-form" id="chat-form" novalidate aria-label="Enviar mensagem">
-              <div class="chat-input-wrapper">
-                <label for="chat-input" class="sr-only">Escreva a sua pergunta</label>
-                <textarea
-                  id="chat-input"
-                  class="chat-input"
-                  placeholder="Escreva a sua pergunta sobre Deucalion ou MakeIt..."
-                  rows="1"
-                  maxlength="500"
-                  aria-describedby="char-counter messages-remaining"
-                ></textarea>
-                <button type="submit" class="chat-send-btn" id="chat-send-btn" aria-label="Enviar mensagem">
-                  <i data-lucide="send" aria-hidden="true"></i>
-                </button>
-              </div>
-              <div class="chat-input-meta">
-                <span class="char-counter" id="char-counter" aria-live="polite">0/500</span>
-              </div>
-            </form>
-
-            <!-- Limit reached message -->
-            <div class="limit-reached" id="limit-reached" hidden role="alert">
-              <i data-lucide="lock" aria-hidden="true"></i>
-              <div>
-                <strong>Limite de mensagens atingido.</strong>
-                <p>Para uma consulta completa e personalizada, <a href="mailto:info@make-it.tech?subject=Consulta%20Inicial%20HPC" class="text-link">contacte-nos diretamente</a> — a consulta inicial é gratuita.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════
          FAQ SECTION
     ════════════════════════════════════════════════════════════════ -->
     <section class="faq" id="faq" aria-labelledby="faq-heading">
@@ -717,7 +456,7 @@
                 <li><strong>Pacotes de preço fixo por projeto</strong> para estudos bem definidos.</li>
                 <li><strong>Modelos de retainer</strong> para trabalhos contínuos ou exploratórios.</li>
               </ul>
-              <p>Importantemente, o tempo de computação no Deucalion é significativamente <strong>subsidiado pelo financiamento EuroHPC</strong>, o que reduz dramaticamente os custos de infraestrutura face a HPC comercial em cloud para projetos elegíveis. Empresas portuguesas e europeias qualificam frequentemente para acesso subsidiado.</p>
+              <p>Importantemente, o tempo de computação no Deucalion é significativamente <strong>subsidiado pelo financiamento EuroHPC</strong>, o que reduz dramaticamente os custos de infraestrutura face a HPC comercial em cloud para projetos elegíveis.</p>
               <p><strong>A consulta inicial é sempre gratuita</strong> e inclui uma estimativa de custos detalhada antes de qualquer compromisso.</p>
             </div>
           </div>
@@ -733,7 +472,7 @@
                 <li><strong>Campanhas de simulação de média escala ou desenvolvimento de modelos ML:</strong> 4–8 semanas.</li>
                 <li><strong>Projetos de grande escala multi-física ou modelos climáticos de longa duração:</strong> 2–6 meses.</li>
               </ul>
-              <p>Definimos sempre marcos claros e fornecemos relatórios de progresso semanais. O tempo de entrega é dramaticamente mais rápido do que as abordagens tradicionais — como mostram os nossos casos de estudo, comprimimos 18 meses de descoberta de fármacos em 3 semanas.</p>
+              <p>Definimos sempre marcos claros e fornecemos relatórios de progresso semanais. O tempo de entrega é dramaticamente mais rápido — como os nossos casos de estudo mostram, comprimimos 18 meses de descoberta de fármacos em 3 semanas.</p>
             </div>
           </div>
 
@@ -750,7 +489,6 @@
                 <li>Práticas alinhadas com <strong>ISO 27001</strong> de segurança da informação.</li>
                 <li>Todos os dados armazenados em <strong>sistemas encriptados com controlos de acesso</strong>.</li>
                 <li>A infraestrutura do Deucalion é operada pelo MACC com protocolos de segurança ao nível da UE.</li>
-                <li>Nenhum dado do cliente é partilhado com terceiros.</li>
               </ul>
               <p>A sua propriedade intelectual permanece inteiramente sua.</p>
             </div>
@@ -784,7 +522,7 @@
                 <li><strong>Sessões introdutórias de consciencialização HPC</strong> para gestores técnicos e decisores.</li>
                 <li><strong>Cursos práticos de programação paralela</strong> (MPI, OpenMP, programação GPU com ROCm/CUDA).</li>
                 <li><strong>Formação específica por domínio</strong> para CFD, simulação molecular ou workloads de ML.</li>
-                <li><strong>Transferência de conhecimento</strong> ao longo de todos os envolvimentos de projeto para que a sua equipa desenvolva capacidade ao longo do tempo.</li>
+                <li><strong>Transferência de conhecimento</strong> ao longo de todos os envolvimentos de projeto.</li>
               </ul>
               <p>Acreditamos em capacitar os clientes, não em criar dependência.</p>
             </div>
@@ -824,7 +562,7 @@
               <i data-lucide="mail" aria-hidden="true"></i>
               Enviar Mensagem
             </a>
-            <a href="mailto:info@make-it.tech?subject=Agendar%20Consulta%20Inicial%20%E2%80%94%20MakeIt%20x%20Deucalion&body=Ol%C3%A1%2C%0A%0AGostaria%20de%20agendar%20uma%20consulta%20inicial%20para%20discutir%20como%20o%20Deucalion%20pode%20ajudar%20a%20minha%20empresa.%0A%0ANome%3A%20%0AEmpresa%3A%20%0ADesafio%3A%20%0A%0AObrigado." class="btn btn-ghost-white btn-xl">
+            <a href="mailto:info@make-it.tech?subject=Agendar%20Consulta%20Inicial%20%E2%80%94%20COTEC%20OpenDay%20Deucalion&body=Ol%C3%A1%2C%0A%0AGostaria%20de%20agendar%20uma%20consulta%20inicial%20para%20discutir%20como%20o%20Deucalion%20pode%20ajudar%20a%20minha%20empresa.%0A%0ANome%3A%20%0AEmpresa%3A%20%0ADesafio%3A%20%0A%0AObrigado." class="btn btn-ghost-white btn-xl">
               <i data-lucide="calendar" aria-hidden="true"></i>
               Agendar Consulta
             </a>
@@ -860,21 +598,21 @@
     <div class="container footer-inner">
 
       <div class="footer-brand">
-        <a href="/" class="nav-logo footer-logo" aria-label="MakeIt — página inicial">
+        <a href="/" class="nav-logo footer-logo" aria-label="COTEC Open Day — página inicial">
           <svg class="logo-icon" width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
             <defs>
-              <linearGradient id="logoGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient id="logoGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stop-color="#EF5350"/>
                 <stop offset="100%" stop-color="#E53935"/>
               </linearGradient>
             </defs>
-            <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" fill="url(#logoGrad2)" opacity="0.15"/>
-            <path d="M14 4 L10 14 L14 12 L18 22 L14 12 L18 10 Z" fill="url(#logoGrad2)" stroke="url(#logoGrad2)" stroke-width="0.5"/>
-            <circle cx="14" cy="14" r="2" fill="url(#logoGrad2)"/>
+            <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" fill="url(#logoGrad3)" opacity="0.15"/>
+            <path d="M14 4 L10 14 L14 12 L18 22 L14 12 L18 10 Z" fill="url(#logoGrad3)" stroke="url(#logoGrad3)" stroke-width="0.5"/>
+            <circle cx="14" cy="14" r="2" fill="url(#logoGrad3)"/>
           </svg>
-          <span class="logo-text">Make<span class="logo-accent">It</span></span>
+          <span class="logo-text">MAKEIT</span>
         </a>
-        <p class="footer-desc">Empresa tecnológica portuguesa especializada em HPC e IA. Fazemos a ponte entre as empresas e o poder de supercomputação do Deucalion.</p>
+        <p class="footer-desc" data-i18n="footer.brand.desc">Parceiro de acesso ao supercomputador Deucalion. Programa COTEC Open Day.</p>
         <div class="footer-social">
           <a href="mailto:info@make-it.tech" class="social-link" aria-label="Email MakeIt">
             <i data-lucide="mail" aria-hidden="true"></i>
@@ -885,46 +623,50 @@
         </div>
       </div>
 
-      <nav class="footer-links" aria-label="Links do rodapé">
-        <h3 class="footer-col-title">Serviços</h3>
+      <nav class="footer-links" aria-label="Links da plataforma">
+        <h3 class="footer-col-title" data-i18n="footer.col1.title">Plataforma</h3>
         <ul role="list">
-          <li><a href="#capabilities" class="footer-link">Capacidades HPC</a></li>
-          <li><a href="#projects" class="footer-link">Projetos</a></li>
-          <li><a href="#chat" class="footer-link">Chat AI</a></li>
-          <li><a href="#faq" class="footer-link">FAQ</a></li>
+          <li><a href="#chat" class="footer-link" data-i18n="footer.link.chat">Chat AI Expert</a></li>
+          <li><a href="#about" class="footer-link" data-i18n="footer.link.deucalion">Sobre o Deucalion</a></li>
+          <li><a href="#capabilities" class="footer-link" data-i18n="footer.link.cap">Capacidades HPC</a></li>
+          <li><a href="#faq" class="footer-link" data-i18n="footer.link.faq">FAQ</a></li>
         </ul>
       </nav>
 
-      <nav class="footer-links" aria-label="Links legais e contacto">
-        <h3 class="footer-col-title">Empresa</h3>
+      <nav class="footer-links" aria-label="Links de contacto">
+        <h3 class="footer-col-title" data-i18n="footer.col2.title">Contacto</h3>
         <ul role="list">
+          <li><a href="mailto:info@make-it.tech" class="footer-link">info@make-it.tech</a></li>
           <li><a href="https://make-it.tech" class="footer-link" target="_blank" rel="noopener">make-it.tech</a></li>
-          <li><a href="mailto:info@make-it.tech" class="footer-link">Contacto</a></li>
-          <li><a href="mailto:info@make-it.tech?subject=Privacy%20Policy" class="footer-link">Privacidade</a></li>
-          <li><a href="mailto:info@make-it.tech?subject=Terms%20of%20Service" class="footer-link">Termos</a></li>
+          <li><a href="mailto:info@make-it.tech?subject=Consulta%20Inicial%20COTEC%20OpenDay" class="footer-link" data-i18n="footer.link.consult">Consulta Gratuita</a></li>
+          <li><a href="mailto:info@make-it.tech?subject=NDA%20Request" class="footer-link">NDA / Privacidade</a></li>
         </ul>
       </nav>
 
-      <div class="footer-partners">
-        <h3 class="footer-col-title">Parceiros</h3>
-        <div class="partner-tags">
-          <span class="partner-tag">EuroHPC</span>
-          <span class="partner-tag">MACC</span>
-          <span class="partner-tag">AMD</span>
-          <span class="partner-tag">Deucalion</span>
+      <div class="footer-partners-section">
+        <h3 class="footer-col-title" data-i18n="footer.col3.title">Parceiros</h3>
+        <div class="footer-partner-logos">
+          <div class="footer-partner-item">
+            <div class="footer-partner-logo-placeholder fp-makeit" aria-label="MakeIt Technology">M</div>
+            <span>MakeIt</span>
+          </div>
+          <div class="footer-partner-item">
+            <div class="footer-partner-logo-placeholder fp-apple" aria-label="Apple">A</div>
+            <span>Apple</span>
+          </div>
+          <div class="footer-partner-item">
+            <div class="footer-partner-logo-placeholder fp-smartext" aria-label="Smartext">S</div>
+            <span>Smartext</span>
+          </div>
         </div>
-        <p class="footer-location">
-          <i data-lucide="map-pin" aria-hidden="true"></i>
-          Portugal · Europa
-        </p>
       </div>
 
     </div>
 
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <p>© 2024 MakeIt Technology. Powered by EuroHPC Deucalion.</p>
-        <p class="footer-made">Built in Portugal 🇵🇹</p>
+        <p data-i18n="footer.bottom">© 2025 COTEC Open Day. Powered by EuroHPC Deucalion.</p>
+        <p class="footer-made" data-i18n="footer.made">Feito em Portugal 🇵🇹</p>
       </div>
     </div>
   </footer>

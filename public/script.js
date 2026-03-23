@@ -14,6 +14,128 @@ document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
   }
 
+  // ── LANGUAGE / TRANSLATIONS ────────────────────────────────
+  const TRANSLATIONS = {
+    pt: {
+      'nav.cta': 'Contactar',
+      'hero.event': 'COTEC Open Day',
+      'hero.title': 'Supercomputação Europeia para a Indústria',
+      'hero.subtitle': 'A MakeIt faz a ponte entre a sua empresa e os 30+ petaflops do Deucalion — sem precisar de experiência em HPC.',
+      'hero.cta1': 'Falar com o AI Expert',
+      'hero.cta2': 'Agendar Consulta',
+      'chat.tagline': 'Respostas instantâneas sobre o Deucalion e como o HPC pode transformar o seu negócio.',
+      'chat.welcome': 'Olá! Sou o assistente AI da MakeIt. Posso ajudá-lo com questões sobre o <strong>Deucalion</strong>, HPC e AI. O que pretende saber?',
+      'chat.placeholder': 'Escreva a sua pergunta sobre Deucalion...',
+      'chat.disclaimer': 'Assistente AI baseado na knowledge base da MakeIt. Para questões específicas, <a href="mailto:info@make-it.tech" class="text-link">contacte-nos diretamente</a>.',
+      'chat.label': 'AI Expert',
+      'footer.brand.desc': 'Parceiro de acesso ao supercomputador Deucalion. Programa COTEC Open Day.',
+      'footer.col1.title': 'Plataforma',
+      'footer.col2.title': 'Contacto',
+      'footer.col3.title': 'Parceiros',
+      'footer.link.chat': 'Chat AI Expert',
+      'footer.link.deucalion': 'Sobre o Deucalion',
+      'footer.link.cap': 'Capacidades HPC',
+      'footer.link.faq': 'FAQ',
+      'footer.link.consult': 'Consulta Gratuita',
+      'footer.bottom': '© 2025 COTEC Open Day. Powered by EuroHPC Deucalion.',
+      'footer.made': 'Feito em Portugal 🇵🇹',
+      'suggestions': [
+        'O que pode o Deucalion fazer pela minha indústria?',
+        'Como trata a MakeIt um projeto do início ao fim?',
+        'Quanto custa usar o Deucalion?',
+        'Quanto tempo demora um projeto típico?',
+        'O que é o Deucalion?',
+        'Os meus dados estão seguros com a MakeIt?',
+        'Que indústrias beneficiam mais do HPC?',
+        'O que é o EuroHPC?',
+        'A MakeIt pode treinar a nossa equipa?',
+        'Que software corre no Deucalion?',
+      ],
+    },
+    en: {
+      'nav.cta': 'Contact',
+      'hero.event': 'COTEC Open Day',
+      'hero.title': 'European Supercomputing for Industry',
+      'hero.subtitle': "MakeIt bridges your company with Deucalion's 30+ petaflops — no HPC expertise required.",
+      'hero.cta1': 'Talk to the AI Expert',
+      'hero.cta2': 'Schedule a Consultation',
+      'chat.tagline': 'Instant answers about Deucalion and how HPC can transform your business.',
+      'chat.welcome': "Hello! I'm MakeIt's AI assistant. I can help you with questions about <strong>Deucalion</strong>, HPC and AI. What would you like to know?",
+      'chat.placeholder': 'Ask your question about Deucalion...',
+      'chat.disclaimer': 'AI assistant based on MakeIt\'s knowledge base. For specific queries, <a href="mailto:info@make-it.tech" class="text-link">contact us directly</a>.',
+      'chat.label': 'AI Expert',
+      'footer.brand.desc': 'Access partner for the Deucalion supercomputer. COTEC Open Day programme.',
+      'footer.col1.title': 'Platform',
+      'footer.col2.title': 'Contact',
+      'footer.col3.title': 'Partners',
+      'footer.link.chat': 'AI Expert Chat',
+      'footer.link.deucalion': 'About Deucalion',
+      'footer.link.cap': 'HPC Capabilities',
+      'footer.link.faq': 'FAQ',
+      'footer.link.consult': 'Free Consultation',
+      'footer.bottom': '© 2025 COTEC Open Day. Powered by EuroHPC Deucalion.',
+      'footer.made': 'Built in Portugal 🇵🇹',
+      'suggestions': [
+        'What can Deucalion do for my industry?',
+        'How does MakeIt handle a project from start to finish?',
+        'What does it cost to use Deucalion?',
+        'How long does a typical HPC project take?',
+        'What is Deucalion?',
+        'Is my data safe with MakeIt?',
+        'What industries benefit most from HPC?',
+        'What is EuroHPC?',
+        'Can MakeIt train our team?',
+        'What software runs on Deucalion?',
+      ],
+    },
+  };
+
+  let currentLang = localStorage.getItem('lang') || 'pt';
+
+  function applyTranslations(lang) {
+    const t = TRANSLATIONS[lang] || TRANSLATIONS['pt'];
+    // Simple text nodes
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (t[key] !== undefined) el.textContent = t[key];
+    });
+    // HTML content
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.dataset.i18nHtml;
+      if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+    // Placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.dataset.i18nPlaceholder;
+      if (t[key] !== undefined) el.placeholder = t[key];
+    });
+    // Update lang buttons state
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      const isActive = btn.dataset.lang === lang;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-pressed', String(isActive));
+    });
+    // Update html lang attribute
+    document.documentElement.lang = lang;
+  }
+
+  // Lang switch handler
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      if (lang === currentLang) return;
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      applyTranslations(lang);
+      // Re-render suggestions in new language
+      if (typeof renderSuggestions === 'function') renderSuggestions('');
+      else renderSuggestionsLang('');
+    });
+  });
+
+  // Apply on load
+  applyTranslations(currentLang);
+
   // ── 1. NAVBAR SCROLL EFFECT ────────────────────────────────────
   const navbar = document.getElementById('navbar');
 
@@ -229,14 +351,46 @@ document.addEventListener('DOMContentLoaded', () => {
   let isStreaming         = false;
 
   // DOM refs
-  const chatForm       = document.getElementById('chat-form');
-  const chatInput      = document.getElementById('chat-input');
-  const chatSendBtn    = document.getElementById('chat-send-btn');
-  const chatMessages   = document.getElementById('chat-messages');
-  const charCounter    = document.getElementById('char-counter');
-  const remainingCount = document.getElementById('remaining-count');
-  const limitReached   = document.getElementById('limit-reached');
-  const rateLimitInfo  = document.getElementById('rate-limit-info');
+  const chatForm          = document.getElementById('chat-form');
+  const chatInput         = document.getElementById('chat-input');
+  const chatSendBtn       = document.getElementById('chat-send-btn');
+  const chatMessages      = document.getElementById('chat-messages');
+  const charCounter       = document.getElementById('char-counter');
+  const limitReached      = document.getElementById('limit-reached');
+  const rateLimitInfo     = document.getElementById('rate-limit-info');
+  const suggestionsEl     = document.getElementById('chat-suggestions');
+
+  // ── Suggestion chips with autocomplete ───────────────────────
+  function getActiveSuggestions() {
+    return (TRANSLATIONS[currentLang] || TRANSLATIONS['pt'])['suggestions'] || [];
+  }
+
+  function renderSuggestions(query = '') {
+    if (!suggestionsEl) return;
+    const lower = query.toLowerCase().trim();
+    const all = getActiveSuggestions();
+    const filtered = lower
+      ? all.filter(s => s.toLowerCase().includes(lower)).slice(0, 5)
+      : all.slice(0, 4);
+
+    suggestionsEl.innerHTML = '';
+    filtered.forEach(text => {
+      const btn = document.createElement('button');
+      btn.className = 'suggestion-chip';
+      btn.textContent = text;
+      btn.type = 'button';
+      btn.setAttribute('aria-label', text);
+      btn.addEventListener('click', () => {
+        if (getRemaining() <= 0 || isStreaming) return;
+        chatInput.value = text;
+        chatInput.dispatchEvent(new Event('input'));
+        chatInput.focus();
+      });
+      suggestionsEl.appendChild(btn);
+    });
+  }
+
+  renderSuggestions();
 
   // Get saved message count
   function getMsgCount() {
@@ -253,23 +407,62 @@ document.addEventListener('DOMContentLoaded', () => {
     return Math.max(0, MAX_MESSAGES - getMsgCount());
   }
 
-  function updateRemainingDisplay() {
-    const rem = getRemaining();
-    if (remainingCount) remainingCount.textContent = rem;
-
-    if (rem <= 0) {
-      disableChat();
-    }
-  }
-
   function disableChat() {
-    if (chatInput)   chatInput.disabled   = true;
-    if (chatSendBtn) chatSendBtn.disabled = true;
-    if (limitReached) limitReached.hidden = false;
+    if (chatInput)    chatInput.disabled   = true;
+    if (chatSendBtn)  chatSendBtn.disabled = true;
+    if (limitReached) limitReached.hidden  = false;
   }
 
-  // Initialise on load
-  updateRemainingDisplay();
+  // Initialise on load — disable chat if session already exhausted
+  if (getRemaining() <= 0) disableChat();
+
+  // ── Warning toast at message 15 ───────────────────────────────
+  function showWarningToast() {
+    const footer = document.querySelector('.chat-footer');
+    if (!footer || document.getElementById('chat-warning-toast')) return;
+    const toast = document.createElement('div');
+    toast.id = 'chat-warning-toast';
+    toast.className = 'chat-warning-toast';
+    toast.setAttribute('role', 'alert');
+    const warnText = currentLang === 'en'
+      ? 'Notice: <strong>5 messages</strong> remaining in this free session.'
+      : 'Atenção: Restam <strong>5 mensagens</strong> nesta sessão gratuita.';
+    toast.innerHTML = `<i data-lucide="alert-triangle" aria-hidden="true"></i><span>${warnText}</span>`;
+    footer.prepend(toast);
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  }
+
+  // ── Handoff action card ───────────────────────────────────────
+  function showHandoffActionCard() {
+    const userMessages = conversationHistory
+      .filter(m => m.role === 'user')
+      .slice(-5)
+      .map(m => `- ${m.content}`)
+      .join('\n');
+    const subject = encodeURIComponent('Interesse via Chat Deucalion - COTEC');
+    const body = encodeURIComponent(
+      `Olá MakeIt,\n\nTive uma conversa no vosso assistente AI durante o COTEC OpenDay e gostaria de continuar.\n\nAs minhas perguntas foram:\n${userMessages}\n\nGostaria de ser contactado para saber mais.\n\nObrigado.`
+    );
+    const mailHref = `mailto:info@make-it.tech?subject=${subject}&body=${body}`;
+
+    const card = document.createElement('div');
+    card.className = 'handoff-action-card';
+    const isEn = currentLang === 'en';
+    card.innerHTML = `
+      <p class="handoff-action-title">${isEn ? 'Would you like to continue this conversation with MakeIt?' : 'Quer continuar esta conversa com a MakeIt?'}</p>
+      <p class="handoff-action-sub">${isEn ? 'We can share the summary with the team to follow up.' : 'Podemos partilhar o resumo desta conversa com a equipa para dar seguimento.'}</p>
+      <div class="handoff-action-btns">
+        <a href="${mailHref}" class="handoff-btn-yes">
+          <i data-lucide="mail" aria-hidden="true"></i>
+          ${isEn ? 'Yes, contact me' : 'Sim, quero ser contactado'}
+        </a>
+        <button class="handoff-btn-no" type="button">${isEn ? 'No, thank you' : 'Não, obrigado'}</button>
+      </div>`;
+    card.querySelector('.handoff-btn-no').addEventListener('click', () => card.remove());
+    chatMessages.appendChild(card);
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+    scrollToBottom();
+  }
 
   // ── Character counter ──────────────────────────────────────────
   if (chatInput && charCounter) {
@@ -282,6 +475,9 @@ document.addEventListener('DOMContentLoaded', () => {
       // Auto-resize textarea
       chatInput.style.height = 'auto';
       chatInput.style.height = Math.min(chatInput.scrollHeight, 120) + 'px';
+
+      // Update suggestion autocomplete
+      renderSuggestions(chatInput.value);
     });
 
     // Submit on Enter (Shift+Enter for newline)
@@ -494,10 +690,10 @@ document.addEventListener('DOMContentLoaded', () => {
       // Show typing indicator
       showTypingIndicator();
 
-      // Optimistically increment counter
+      // Increment counter + trigger milestone logic
       const newCount = incrementMsgCount();
-      const remaining = getRemaining();
-      if (remainingCount) remainingCount.textContent = remaining;
+      if (newCount === 15) showWarningToast();
+      const isHandoff = newCount === 16;
 
       try {
         const response = await fetch('/api/chat', {
@@ -506,13 +702,15 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify({
             message: userText,
             history: historyToSend,
+            handoffTrigger: isHandoff,
+            lang: currentLang,
           }),
         });
 
         // Check for error responses
         if (response.status === 429) {
           removeTypingIndicator();
-          const data = await response.json().catch(() => ({}));
+          await response.json().catch(() => ({}));
           if (rateLimitInfo) {
             rateLimitInfo.hidden  = false;
             rateLimitInfo.textContent = 'Muitas mensagens. Aguarde 5 minutos.';
@@ -552,6 +750,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update conversation history
         conversationHistory.push({ role: 'user', content: userText });
         conversationHistory.push({ role: 'assistant', content: fullText });
+
+        // Show handoff card after the 16th message response
+        if (isHandoff) showHandoffActionCard();
         // Keep max 10 messages in memory (5 pairs)
         if (conversationHistory.length > 10) {
           conversationHistory = conversationHistory.slice(-10);
@@ -579,26 +780,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── 10. SUGGESTED QUESTIONS ───────────────────────────────────
-  const suggestionChips = document.querySelectorAll('.suggestion-chip');
-
-  suggestionChips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      if (!chatInput || getRemaining() <= 0 || isStreaming) return;
-
-      chatInput.value = chip.textContent.trim();
-      chatInput.dispatchEvent(new Event('input'));
-
-      // Scroll to chat and focus
-      const chatSection = document.getElementById('chat');
-      if (chatSection) {
-        chatSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setTimeout(() => {
-          chatInput.focus();
-        }, 600);
-      }
-    });
-  });
+  // ── 10. SUGGESTED QUESTIONS — handled by renderSuggestions() ──
 
   // ── 11. HERO "ASK THE AI" BUTTON ─────────────────────────────
   const heroChatBtn = document.getElementById('hero-chat-btn');

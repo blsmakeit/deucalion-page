@@ -136,6 +136,14 @@ function retrieveRelevantContext(query, topK = 3) {
 
 loadKnowledgeBase();
 
+// ── Auto-reload KB when knowledge-base.txt changes ─────────────
+fs.watch(path.join(__dirname, 'knowledge-base.txt'), { persistent: false }, (eventType) => {
+  if (eventType === 'change') {
+    console.log('[KB] knowledge-base.txt changed — reloading...');
+    loadKnowledgeBase();
+  }
+});
+
 // ── Anthropic Client ───────────────────────────────────────────────────────────
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
@@ -144,7 +152,7 @@ const anthropic = new Anthropic({
 // ── Chat Endpoint ──────────────────────────────────────────────────────────────
 app.post('/api/chat', chatLimiter, async (req, res) => {
   // Input validation
-  const { message, history } = req.body;
+  const { message, history, handoffTrigger, lang } = req.body;
 
   if (!message || typeof message !== 'string') {
     return res.status(400).json({ error: 'Message is required.' });
@@ -178,7 +186,14 @@ app.post('/api/chat', chatLimiter, async (req, res) => {
   // RAG: retrieve relevant context
   const context = retrieveRelevantContext(trimmedMessage, 3);
 
-  const systemPrompt = `You are an expert AI assistant for MakeIt Technology — a Portuguese HPC and AI company that helps businesses access Deucalion, one of Europe's most powerful supercomputers, hosted at MACC in Braga, Portugal.
+  const handoffInstruction = handoffTrigger === true ? `
+
+SPECIAL INSTRUCTION FOR THIS RESPONSE ONLY: After your (very brief) answer to the user's question, add EXACTLY the following paragraph — adapt the language to match what the user is writing in:
+• If writing in Portuguese: "Estivemos aqui a falar de coisas interessantes que acho que devias falar com a MAKE IT. Queres que a MAKE IT entre em contacto contigo para continuar a conversa? Posso partilhar com a MAKE IT o teu interesse com base nesta conversa ou podes-me dizer aqui uma mensagem específica que queres que lhes envie."
+• If writing in English: "We've been having an interesting conversation here — I think this is something you should discuss directly with MAKE IT. Would you like MAKE IT to get in touch with you? I can share your interest based on our conversation, or you can tell me a specific message you'd like me to send them."` : '';
+
+  const systemPrompt = `You are an expert AI assistant for MakeIt Technology — a Portuguese HPC and AI company that helps businesses access Deucalion, one of Europe's most powerful supercomputers, hosted at MACC in Braga, Portugal. This assistant is part of the Programa COTEC OpenDay.
+${lang === 'en' ? 'CRITICAL: You MUST respond ONLY in English. Every single word of your response must be in English.' : 'CRÍTICO: DEVES responder SEMPRE e APENAS em Português Europeu. Absolutamente todas as palavras devem ser em Português.'}
 
 Your role is to help visitors understand:
 - What Deucalion is and what it can do
@@ -189,16 +204,19 @@ Your role is to help visitors understand:
 KNOWLEDGE BASE CONTEXT (use this to answer accurately):
 ${context}
 
+RESPONSE STYLE — CRITICAL:
+- Be extremely concise and direct. Maximum 2–3 short paragraphs OR a short bulleted list.
+- Use markdown formatting: **bold** for key terms, bullet lists for comparisons or options, short sentences.
+- Never be verbose, never pad your answer, never repeat information already given.
+- Get straight to the point.
+
 GUIDELINES:
 - Always respond in the same language the user writes in (Portuguese or English)
-- Be concise, professional, and genuinely helpful — no marketing fluff
-- If a question relates to something in the knowledge base, base your answer on that information
-- For questions outside your knowledge base (specific pricing, custom quotes, proprietary details), recommend the free consultation: info@make-it.tech
+- Be professional and genuinely helpful — no marketing fluff
+- Base your answers on the knowledge base context when relevant
+- For questions outside the knowledge base (custom quotes, proprietary details), recommend: info@make-it.tech
 - Never invent technical specifications or project details not in the knowledge base
-- When relevant, mention that MakeIt offers a free initial consultation
-- Keep responses focused: 2–4 paragraphs maximum
-- Use bullet points for lists — it improves readability
-- Be warm and approachable, not robotic`;
+- When relevant, mention MakeIt offers a free initial consultation${handoffInstruction}`;
 
   // Set up SSE headers
   res.setHeader('Content-Type', 'text/event-stream');
